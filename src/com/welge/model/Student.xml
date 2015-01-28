@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.welge.model.Student">
+	<select id="select" resultType="com.welge.model.Student">
+		select * from student
+	</select>
+	<select id="get" parameterType="java.lang.String" resultType="student">
+		select * from student where name=#{name}
+	</select>
+	<insert id="insert" parameterType="student">
+		insert into student values(#{name})
+	</insert>
+
+	<select id="selectByName" parameterType="java.lang.String"
+		resultType="student">
+		select * from student s where s.name like #{name}
+	</select>
+
+
+</mapper>
